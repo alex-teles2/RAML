@@ -1,0 +1,16 @@
+#%RAML 1.0
+title: A CRUD API for Users and Groups
+mediaType: application/json
+
+uses:
+  Common: libraries/types/common.raml
+  User:   libraries/types/user.raml
+  Group:  libraries/types/group.raml
+  CRUD:   libraries/resourceTypes/crud.raml
+
+/users:
+  description: All the users
+  type:
+    CRUD.collection:
+      typename: User.full
+      typename-new: User.new
